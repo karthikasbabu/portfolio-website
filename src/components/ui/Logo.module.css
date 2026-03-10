@@ -1,0 +1,92 @@
+.logoContainer {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.terminalLogo {
+    width: 48px;
+    height: 48px;
+    background: #1a1a1a;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.terminalHeader {
+    height: 12px;
+    background: #2a2a2a;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 6px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.dotRed {
+    background: #ff5f56;
+}
+
+.dotYellow {
+    background: #ffbd2e;
+}
+
+.dotGreen {
+    background: #27c93f;
+}
+
+.terminalBody {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 4px;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.terminalPrompt {
+    color: #8b5cf6;
+    /* var(--accent-primary) default */
+    margin-right: 2px;
+}
+
+.terminalChar {
+    color: #ffffff;
+}
+
+.terminalCursor {
+    width: 8px;
+    height: 1.2rem;
+    background: #8b5cf6;
+    /* var(--accent-primary) default */
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.logoContainer:hover .terminalLogo {
+    transform: translateY(-2px) scale(1.05);
+    border-color: #8b5cf6;
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.2);
+}
+
+.logoContainer:hover .terminalHeader {
+    background: #333;
+}

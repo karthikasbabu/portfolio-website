@@ -1,42 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --bg-primary: #DED4E8;
+  /* Soft Lavender */
+  --bg-secondary: #e8e1f0;
+  /* Lighter Lavender */
+  --accent-primary: #C7395F;
+  /* Pink */
+  --accent-secondary: #E8BA40;
+  /* Yellow */
+  --text-dark: #1e1b24;
+  /* Dark charcoal */
+  --text-primary: #1e1b24;
+  --text-light: #F9FAFB;
+  /* Off White */
+  --text-secondary: #5e4b7a;
+  /* Muted purple-grey */
+  --glass-bg: rgba(255, 255, 255, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --font-main: 'Inter', sans-serif;
+  --font-heading: 'Bungee', cursive;
+  /* Retro Heading Font */
+  --font-subheading: 'Outfit', sans-serif;
+  --max-width: 1200px;
+  --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  cursor: none;
+}
+
+@media (max-width: 1024px) {
+  body {
+    cursor: auto;
+  }
+}
+
+h1,
+h2 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  /* Bungee usually doesn't need weights */
+  line-height: 1.1;
+  color: var(--accent-secondary);
+  text-transform: uppercase;
+  /* Hand-drawn retro stroke effect using multiple shadows */
+  text-shadow:
+    2px 2px 0px var(--text-dark),
+    -1px -1px 0px var(--text-dark),
+    1px -1px 0px var(--text-dark),
+    -1px 1px 0px var(--text-dark),
+    1px 1px 0px var(--text-dark);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.retro-subtitle {
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  transition: var(--transition-smooth);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+ul {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbc0d3;
+  /* Darker lavender for contrast */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Gradient Backgrounds & Masks */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 120px 0;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+/* Background Decorations */
+.bg-decorations {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+.blob {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.25;
+  transition: all 1s ease;
+  mix-blend-mode: multiply;
+  /* Better for light backgrounds */
+}
+
+.blob-1 {
+  top: -100px;
+  right: -100px;
+  background: var(--accent-primary);
+  animation: move-1 20s infinite alternate;
+}
+
+.blob-2 {
+  bottom: -100px;
+  left: -100px;
+  background: var(--accent-secondary);
+  animation: move-2 25s infinite alternate;
+}
+
+@keyframes move-1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(-200px, 200px) scale(1.1);
+  }
+}
+
+@keyframes move-2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(200px, -200px) scale(1.2);
   }
 }

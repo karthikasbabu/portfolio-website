@@ -1,0 +1,273 @@
+.aboutSection {
+    background-color: var(--bg-secondary);
+    position: relative;
+}
+
+.aboutGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.aboutImageContainer {
+    position: relative;
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.techGrid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 105%;
+    height: 105%;
+    max-width: 420px;
+    background: transparent;
+    border-radius: 2rem;
+    pointer-events: none;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 1.5rem;
+}
+
+.gridDots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(var(--accent-primary) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.15;
+    mask-image: linear-gradient(to bottom right, black, transparent);
+}
+
+.dataTag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--accent-primary);
+    letter-spacing: 0.2em;
+    opacity: 0.5;
+    background: rgba(var(--accent-primary-rgb), 0.1);
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(var(--accent-primary-rgb), 0.2);
+}
+
+.imageCard {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+}
+
+.imageOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%,
+            rgba(0, 0, 0, 0.2) 100%);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--accent-primary);
+    z-index: 6;
+    opacity: 0.6;
+}
+
+.topRight {
+    top: 15px;
+    right: 15px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.bottomLeft {
+    bottom: 15px;
+    left: 15px;
+    border-right: none;
+    border-top: none;
+}
+
+.scanLine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.5),
+            transparent);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    z-index: 7;
+    animation: scan 3s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes scan {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+.profileImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.1s linear;
+}
+
+
+.floatingElements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.floatItem {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.floatItem:nth-child(1) {
+    top: -20px;
+    right: 20px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.floatItem:nth-child(2) {
+    bottom: 40px;
+    left: -30px;
+    animation: float 5s ease-in-out infinite 1s;
+}
+
+.floatItem:nth-child(3) {
+    bottom: -20px;
+    right: 60px;
+    animation: float 6s ease-in-out infinite 0.5s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+.sectionTitle {
+    font-size: 3.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.aboutBio {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.statItem {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.statItem:hover {
+    background: rgba(var(--accent-primary-rgb), 0.05);
+    border-color: rgba(var(--accent-primary-rgb), 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(var(--accent-primary-rgb), 0.2);
+}
+
+.statNumber {
+    display: flex;
+    align-items: baseline;
+}
+
+.statValue {
+    font-size: 3rem;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+}
+
+.statLabel {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+}
+
+@media (max-width: 992px) {
+    .aboutGrid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .aboutImageContainer {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}

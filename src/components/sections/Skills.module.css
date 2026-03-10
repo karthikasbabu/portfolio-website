@@ -1,0 +1,113 @@
+.skillsSection {
+    background-color: var(--bg-secondary);
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.sectionTitle {
+    margin-bottom: 1.5rem;
+}
+
+.skillCategory {
+    position: relative;
+    padding: 2.5rem;
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(139, 92, 246, 0.1);
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 20px rgba(94, 75, 122, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+/* Spotlight Effect */
+.skillCategory::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+            rgba(139, 92, 246, 0.12),
+            transparent 40%);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.skillCategory:hover::before {
+    opacity: 1;
+}
+
+.categoryTitle {
+    position: relative;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    z-index: 2;
+}
+
+.particleContainer {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.particle {
+    position: absolute;
+    color: var(--text-secondary);
+    font-family: monospace;
+    font-size: 0.7rem;
+    user-select: none;
+    opacity: 0.2;
+}
+
+.interactiveTitleContainer {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.sectionTitle {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.sectionTitle:hover {
+    color: var(--text-secondary);
+    text-shadow: 0 0 8px rgba(94, 75, 122, 0.3);
+}
+
+.skillsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skillTag {
+    padding: 0.8rem 1.2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+@media (max-width: 768px) {
+    .skillsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .skillCategory {
+        padding: 2rem;
+    }
+}

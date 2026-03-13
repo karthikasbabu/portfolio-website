@@ -29,12 +29,18 @@ export default function HeroBackgroundAnimation() {
         window.addEventListener('resize', resize);
         resize();
 
-        // Theme colors
-        const colors = [
-            '#ded4e8', // Lavender (bg-primary)
-            '#c7395f', // Pink (accent-primary)
-            '#e8ba40', // Yellow (accent-secondary)
-        ];
+        // Theme colors from CSS variables
+        const getThemeColors = () => {
+            if (typeof window === 'undefined') return ['#ded4e8', '#c7395f', '#e8ba40'];
+            const style = getComputedStyle(document.documentElement);
+            return [
+                style.getPropertyValue('--bg-primary').trim() || '#ded4e8',
+                style.getPropertyValue('--accent-primary').trim() || '#c7395f',
+                style.getPropertyValue('--accent-secondary').trim() || '#e8ba40',
+            ];
+        };
+
+        const colors = getThemeColors();
 
         const animate = () => {
             time += 0.005;

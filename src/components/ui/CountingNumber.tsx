@@ -17,7 +17,7 @@ export const CountingNumber = ({ value, duration = 2, suffix = '', className }: 
         duration: duration * 1000,
         bounce: 0,
     });
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const isInView = useInView(ref, { once: true, margin: "-20px" });
 
     useEffect(() => {
         if (isInView) {
@@ -38,6 +38,8 @@ export const CountingNumber = ({ value, duration = 2, suffix = '', className }: 
         <span
             ref={ref}
             className={className}
-        />
+        >
+            0{suffix}
+        </span>
     );
 };

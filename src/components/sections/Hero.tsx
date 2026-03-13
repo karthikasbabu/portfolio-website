@@ -5,6 +5,7 @@ import { motion, Variants } from 'framer-motion';
 import MagneticButton from '../ui/MagneticButton';
 import styles from './Hero.module.css';
 import { TypingHeading } from '../ui/TypingHeading';
+import HeroBackgroundAnimation from '../ui/HeroBackgroundAnimation';
 
 export default function Hero() {
     const containerVariants: Variants = {
@@ -33,6 +34,7 @@ export default function Hero() {
 
     return (
         <section id="home" className={styles.heroSection}>
+            <HeroBackgroundAnimation />
             <div className="container">
                 <motion.div
                     className={styles.heroContent}

@@ -67,6 +67,17 @@
     filter: blur(100px);
 }
 
+@media (max-width: 768px) {
+    .blobsLayer {
+        filter: blur(40px);
+    }
+
+    .blob {
+        width: 100vw;
+        height: 100vw;
+    }
+}
+
 .blob {
     position: absolute;
     width: 70vw;

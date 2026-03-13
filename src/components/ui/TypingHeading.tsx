@@ -43,7 +43,7 @@ export const TypingHeading: React.FC<TypingHeadingProps> = ({
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, margin: "-20px" }}
             >
                 {text.split('').map((char, index) => (
                     <motion.span

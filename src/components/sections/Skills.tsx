@@ -19,6 +19,10 @@ const skillCategories = [
   {
     title: 'DevOps & Infrastructure',
     skills: ['Git', 'GitHub', 'Vercel']
+  },
+  {
+    title: 'Integrations & Tools',
+    skills: ['Resend', 'SendGrid', 'Razorpay', 'Cashfree', 'EmailJS']
   }
 ];
 

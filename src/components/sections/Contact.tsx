@@ -88,7 +88,9 @@ export default function Contact() {
                 <div className={styles.infoItems}>
                   <div className={styles.infoItem}>
                     <Mail className={styles.infoIcon} size={20} />
-                    <span>karthikasbabu4@gmail.com</span>
+                    <a href="mailto:karthikasbabu4@gmail.com" className={styles.emailLink}>
+                      karthikasbabu4@gmail.com
+                    </a>
                   </div>
                   <div className={styles.infoItem}>
                     <MapPin className={styles.infoIcon} size={20} />

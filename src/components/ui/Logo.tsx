@@ -10,18 +10,12 @@ interface LogoProps {
 export default function Logo({ className }: LogoProps) {
     return (
         <div className={`${styles.logoContainer} ${className}`}>
-            <div className={styles.terminalLogo}>
-                <div className={styles.terminalHeader}>
-                    <div className={`${styles.dot} ${styles.dotRed}`}></div>
-                    <div className={`${styles.dot} ${styles.dotYellow}`}></div>
-                    <div className={`${styles.dot} ${styles.dotGreen}`}></div>
-                </div>
-                <div className={styles.terminalBody}>
-                    <span className={styles.terminalPrompt}>&gt;</span>
-                    <span className={styles.terminalChar}>K</span>
-                    <span className={styles.terminalCursor}></span>
-                </div>
-            </div>
+            <img
+                src="/karthika-logo.png"
+                alt="Karthika Logo"
+                className={styles.logoImage}
+            />
         </div>
+
     );
 }

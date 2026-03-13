@@ -6,6 +6,9 @@ import BackgroundInteractions from '@/components/ui/BackgroundInteractions';
 export const metadata: Metadata = {
   title: 'Portfolio | Karthika S Babu',
   description: 'Premium Portfolio of Karthika S Babu, a Full Stack Developer specializing in high-end, interactive web experiences.',
+  icons: {
+    icon: '/icon.png',
+  },
 };
 
 export default function RootLayout({

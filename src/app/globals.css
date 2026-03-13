@@ -133,6 +133,14 @@ button {
   border: 1px solid var(--glass-border);
 }
 
+@media (max-width: 768px) {
+  .glass {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.6);
+  }
+}
+
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -174,7 +182,16 @@ section {
   opacity: 0.25;
   transition: all 1s ease;
   mix-blend-mode: multiply;
-  /* Better for light backgrounds */
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .blob {
+    filter: blur(60px);
+    width: 400px;
+    height: 400px;
+    opacity: 0.15;
+  }
 }
 
 .blob-1 {

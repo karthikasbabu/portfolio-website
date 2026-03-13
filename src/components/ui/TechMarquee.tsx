@@ -25,6 +25,11 @@ const techLogos = [
     { name: 'Git', slug: 'git' },
     { name: 'Vercel', slug: 'vercel' },
     { name: 'Strapi', slug: 'strapi' },
+    { name: 'Resend', slug: 'resend' },
+    { name: 'SendGrid', slug: 'sendgrid' },
+    { name: 'Razorpay', slug: 'razorpay' },
+    { name: 'Cashfree', slug: 'cashfree' },
+    { name: 'EmailJS', slug: 'mailfwd' },
 ];
 
 export const TechMarquee = () => {
